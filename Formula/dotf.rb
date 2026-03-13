@@ -1,35 +1,31 @@
 class Dotf < Formula
   desc "Dotfiles manager with pluggable secret injection (pass, op, bw, env)"
   homepage "https://github.com/chrisfentiman/dot"
-  version "0.5.0"
+  version "0.8.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/chrisfentiman/dot/releases/download/v0.5.0/dotf-aarch64-macos"
-      sha256 "915bc399aa2eca375e25ddf7258d33ce9b15a88d12453a7ee335c5d3a9886cac"
+      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.0/dotf-aarch64-apple-darwin.tar.gz"
+      sha256 "1b886b7c9aa46fb836d844f9017fc1199a0b508e1d6c74843e6ff61782714cb4"
     elsif Hardware::CPU.intel?
-      url "https://github.com/chrisfentiman/dot/releases/download/v0.5.0/dotf-x86_64-macos"
-      sha256 "9b67b2e20deade26d967ddc2f50ac1645ae2e575ce282a2eae87a7b75be664db"
+      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.0/dotf-x86_64-apple-darwin.tar.gz"
+      sha256 "0eb7f09bf6c84d495de3889726f430857dc30de1f34486737b91296639f9541b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/chrisfentiman/dot/releases/download/v0.5.0/dotf-aarch64-linux"
-      sha256 "8ebc7c61dec0fa00deda5382fbf2da719febd5ee19bbd740cc3f9f3aaba429e5"
+      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.0/dotf-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "61827050fd443332b0b97e66f22c068c9e784445e0305dd6667c8a074e021877"
     elsif Hardware::CPU.intel?
-      url "https://github.com/chrisfentiman/dot/releases/download/v0.5.0/dotf-x86_64-linux"
-      sha256 "441f70fd04762d3c0bab287383d41219c0126f41c6923f1801912820b051ebf0"
+      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.0/dotf-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "7b0c15422abbaca70de31b9bc1444dac278a32c405f459349601c298857ad652"
     end
   end
 
   def install
-    os = OS.mac? ? "macos" : "linux"
-    arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
-    binary = "dotf-#{arch}-#{os}"
-    chmod 0755, binary
-    bin.install binary => "dotf"
+    bin.install "dotf"
   end
 
   test do
