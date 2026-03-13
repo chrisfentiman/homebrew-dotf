@@ -1,26 +1,26 @@
 class Dotf < Formula
   desc "Dotfiles manager with pluggable secret injection (pass, op, bw, env)"
   homepage "https://github.com/chrisfentiman/dot"
-  version "0.8.0"
+  version "0.8.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.0/dotf-aarch64-apple-darwin.tar.gz"
-      sha256 "1b886b7c9aa46fb836d844f9017fc1199a0b508e1d6c74843e6ff61782714cb4"
+      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.1/dotf-aarch64-apple-darwin.tar.gz"
+      sha256 "c7c446a2c26ea43aa09e83090c215b4226b3062b4ac66c9686807a8bbcc44e4f"
     elsif Hardware::CPU.intel?
-      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.0/dotf-x86_64-apple-darwin.tar.gz"
-      sha256 "0eb7f09bf6c84d495de3889726f430857dc30de1f34486737b91296639f9541b"
+      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.1/dotf-x86_64-apple-darwin.tar.gz"
+      sha256 "52b157c74750b3a1cf4731d4ababb99e6e5a524322da8b59952d1f9e2dffee31"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.0/dotf-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "61827050fd443332b0b97e66f22c068c9e784445e0305dd6667c8a074e021877"
+      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.1/dotf-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "82063062acb20cc3213dfaafa981fef04bf318174de97fe08487f75dc18b2caf"
     elsif Hardware::CPU.intel?
-      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.0/dotf-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "7b0c15422abbaca70de31b9bc1444dac278a32c405f459349601c298857ad652"
+      url "https://github.com/chrisfentiman/dot/releases/download/v0.8.1/dotf-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "d053c0575cf7630a86141347e0dca90332f98174332d0b50977c2f30d91c6fa0"
     end
   end
 
